@@ -28,22 +28,14 @@ function show(id) {
   document.getElementById(id).style.display = "block";
 }
 
-function hideAll() {
-  hide("skills");
-  hide("projects");
-  hide("languages");
-  hide("home");
-}
-
 var activePage = "home";
 
-function showPage(id) {
-  hideAll();
-  show(id);
-  // console.warn("preview page", activePage);
+function showPage(nextPage) {
+  hide(activePage);
+  show(nextPage);
   document.getElementById("menu-" + activePage).classList.remove("active");
-  document.getElementById("menu-" + id).classList.add("active");
-  activePage = id;
+  document.getElementById("menu-" + nextPage).classList.add("active");
+  activePage = nextPage;
 }
 
 showPage(activePage);
