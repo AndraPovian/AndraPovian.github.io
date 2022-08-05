@@ -55,18 +55,15 @@ showPage(activePage);
 initEvents();
 
 function displaySkills() {
-  console.info("display skills");
-
-  // initializare; conditie; post exec
-  for (var i = 1; i < 5; i++) {
-    console.info(`${i} * 5 =${i * 5}`);
-  }
-
   var ul = document.querySelector("#skills ul");
-  var skills = ["html", "js", "css"];
+  var skills = [
+    { name: "html", endorcements: 15 },
+    { name: "js", endorcements: 5 },
+    { name: "css", endorcements: 10 },
+  ];
   console.info(skills);
   for (var i = 0; i < skills.length; i++) {
-    ul.innerHTML += `<li>${skills[i]}</li>`;
+    ul.innerHTML += `<li>${skills[i].name} - ${skills[i].endorcements}</li>`;
   }
 }
 
