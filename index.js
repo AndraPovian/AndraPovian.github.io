@@ -46,7 +46,6 @@ function initEvents() {
     .addEventListener("click", function (e) {
       if (e.target.matches("a")) {
         var id = e.target.getAttribute("data-page");
-        console.warn("click pe menu", id, e.target.matches("a"));
         showPage(id);
       }
     });
@@ -54,3 +53,21 @@ function initEvents() {
 
 showPage(activePage);
 initEvents();
+
+function displaySkills() {
+  console.info("display skills");
+
+  // initializare; conditie; post exec
+  for (var i = 1; i < 5; i++) {
+    console.info(`${i} * 5 =${i * 5}`);
+  }
+
+  var ul = document.querySelector("#skills ul");
+  var skills = ["html", "js", "css"];
+  console.info(skills);
+  for (var i = 0; i < skills.length; i++) {
+    ul.innerHTML += `<li>${skills[i]}</li>`;
+  }
+}
+
+displaySkills();
